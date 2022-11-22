@@ -1,8 +1,9 @@
 let index=1;
 display(index);
 
-function addSlides(n) {
+function pushSlides(n) {
     display(index+=n);
+    console.log(" ")
 }
 
 function currentSlide(n) {
@@ -13,14 +14,18 @@ function display(n) {
     let i;
     let slides=document.getElementsByClassName("slide");
     let dots=document.getElementsByClassName("dot");
-    if (n>slides.length) {index=1}    
-    if (n<1) {index=slides.length}
-    for (i = 0; i<slides.length; i++) {
+    if(n>slides.length){
+        index=1
+    }
+    if(n<1){
+        index=slides.length
+    }
+    for(i=0;i<slides.length;i++){
         slides[i].style.display="none";  
     }
-    for (i = 0; i<dots.length; i++) {
+    for(i = 0; i<dots.length; i++){
         dots[i].className=dots[i].className.replace("active", "");
     }
     slides[index-1].style.display="block";  
-    dots[index-1].className+=" active";
+    dots[index-1].className+="active";
 }
