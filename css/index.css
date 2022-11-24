@@ -54,31 +54,23 @@ body{
 }
 
 .carousel-container{
-    max-width: 1000px;
-    position: absolute;
-    top:180px;
-    left:20%;
-    margin: auto;
+    width: 100%;
+    height: 500px;
+}
 
+#slideshowContainer {
+    display: flex;
+    height: 400px;
+    margin: 50px 50px 0px 50px;
 }
-.slide{
-    display: none;
-}
-.fade {
+/* .fade {
     animation-name: fade;
     animation-duration: 1.5s;
 }
 @keyframes fade {
     from {opacity: .4}
     to {opacity: 1}
-}
-.number{
-    color: #f2f2f2;
-    font-size: 12px;
-    padding: 8px 12px;
-    position: absolute;
-    top: 0;
-}
+} */
 .images{
     justify-content: center;
     height: 400px;
@@ -90,10 +82,11 @@ body{
     font-size: 15px;
     cursor: pointer;
     position: absolute;
+    margin: 50px;
     top: 50%;
     width: auto;
-    margin-top: -22px;
-    padding: 10px;
+    /* margin-top: -22px; */
+    padding: 16px;
     transition: 0.6s;
     border-radius: 0 3px 3px 0;
 }
@@ -101,7 +94,7 @@ body{
     right: 0;
     border-radius: 3px 0 0 3px;
 }
-.more{
+#more{
     text-align:center;
 }
 .prev:hover, .next:hover {

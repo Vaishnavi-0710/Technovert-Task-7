@@ -1,31 +1,51 @@
-let index=1;
-display(index);
+let nextIndex,curIndex=0,images=[];
+images=[
+    {
+        url: "../images/img1.jfif",
+        alt: "img not found"
+    },
+    {
+        url: "../images/img2.jfif",
+        alt: "img not found"
+    },
+    {
+        url: "../images/img3.jfif",
+        alt: "img not found"
+    },
+    {
+        url: "../images/img4.jfif",
+        alt: "img not found"
+    },
+    {
+        url: "../images/img5.jfif",
+        alt: "img not found"
+    }
+]
+$(document).ready(function(){
+    addimages();
+    // $(".prev").click(function(e){
+    //     e.preventDefault();
+    // });
+});
 
-function pushSlides(n) {
-    display(index+=n);
-    console.log(" ")
+function addimages(){
+    list="";
+    dotList="";
+    i=0;
+    images.forEach((image)=>{
+        list+=`<div class="slide fade"><img class="images" src="${image.url}" alt="${image.alt}"> </div>`;
+        dotList+=`<span class="dot" onclick="currentSlide(${i})"></span>`;
+        i++
+    });
+    // list+=`<a class="prev" onclick="">`+ &#10094; + `</a>
+    //     <a class="next" onclick="">`+ &#10095; + `</a>`;
+    let slideshowContainer=document.getElementById("slideshowContainer");
+    slideshowContainer.innerHTML=list;
+    let more=document.getElementById("more");
+    more.innerHTML=dotList;
+
+    
+
 }
 
-function currentSlide(n) {
-    display(index=n);
-}
 
-function display(n) {
-    let i;
-    let slides=document.getElementsByClassName("slide");
-    let dots=document.getElementsByClassName("dot");
-    if(n>slides.length){
-        index=1
-    }
-    if(n<1){
-        index=slides.length
-    }
-    for(i=0;i<slides.length;i++){
-        slides[i].style.display="none";  
-    }
-    for(i = 0; i<dots.length; i++){
-        dots[i].className=dots[i].className.replace("active", "");
-    }
-    slides[index-1].style.display="block";  
-    dots[index-1].className+="active";
-}
