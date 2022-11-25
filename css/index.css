@@ -35,6 +35,9 @@ body{
     padding: 16px;
     border-radius: 0 3px 3px 0;
 }
+.next{
+    border-radius: 3px 0 0 3px;
+}
 .prev:hover, .next:hover {
     background-color: rgba(0,0,0,0.8);
 }
