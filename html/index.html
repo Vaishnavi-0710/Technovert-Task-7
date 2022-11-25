@@ -3,15 +3,16 @@
     <head>
         <title>Homepage</title>
         <link rel="stylesheet" href="../css/index.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
         <script src="../js/index.js" defer></script>
     </head>
     <body>
         <div id="carouselContainer">
             <div id="slideshowContainer"></div>
-            <a class="prev" onclick="pushSlides(-1)">&#10094;</a>
-            <a class="next" onclick="pushSlides(1)">&#10095;</a>
-            <div id="dots"></div>
-        </div>   
+            <div class="navigation">
+                <div class="prev" onclick="pushSlides(-1)">&#10094;</div>
+                <div class="next" onclick="pushSlides(1)">&#10095;</div>
+            </div>
+            </div>
+        </div>
     </body>
 </html>
